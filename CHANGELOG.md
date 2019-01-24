@@ -1,5 +1,25 @@
 # CHANGELOG
 
+## 2019-01-23
+Added
+*	Support for closed caption
+*	Support for multi-share setting
+*	Support for controlling the device camera
+*	New feature to customize the title of meeting UI
+*	New feature to handle meeting reminder. The user can hide the reminder tooltip button and customize the reminder message
+*	New logging feature that stores logs with the maximum size of 5MB.
+*	New options to turn on/off the video and audio for API user.
+*	A new method to join/start meeting directly via url, such as zoommtg://zoom.us/join?action=....
+
+Changed & Fixed
+*	An issue that the screen sharing set to 1 FPS when another API is called
+*	An issue that cannot move floating video window to screen edge
+*	An issue that cannot use chat under donet framework
+*	An issue that IMeetingConfiguration::EnableAutoEndOtherMeetingWhenStartMeeting doesn’t work
+
+Coming in the future releases
+*	A new refactorized demo project that provides clear instructions on how to implement major features will come in the next release
+
 ## 2018-10-29
 
 * Support advanced share at API level
@@ -40,9 +60,9 @@ add new interface to get customized annotation controller
 
 meeting_chat_interface.h
 ```
-1.add new callback  event for chat status changed. 
+1.add new callback  event for chat status changed.
 onChatStautsChangedNotification
-2.add new interface to send chat for webinar meeting. 
+2.add new interface to send chat for webinar meeting.
 SendChat4WebinarMeeting
 3.add new interface to get current privilege status of chat session.
  GetChatStatus
@@ -50,7 +70,7 @@ SendChat4WebinarMeeting
 
 meeting_configuration_interface.h
 ```
-support redirect click evnet of custom live stream menu. 
+support redirect click evnet of custom live stream menu.
 ClickCustomLiveStreamMenuEvent
 ```
 
@@ -64,7 +84,7 @@ RequestCustomizedLocalRecordingSource
 
 Setting Service
 ```
-1.add more audio settings interface 
+1.add more audio settings interface
 IAudioSettingContext
 2.add more video settings interface
 IVideoSettingContext
@@ -106,22 +126,22 @@ StartParam.StartParam4WithoutLogin
 3.add new interface to get meeting password
 ZOOM_SDK_NAMESPACE.IMeetingInfo.GetMeetingPassword
 4.add new callback event for meeting parameter notification
-ZOOM_SDK_NAMESPACE.IMeetingServiceEvent.onMeetingParameterNotification 
+ZOOM_SDK_NAMESPACE.IMeetingServiceEvent.onMeetingParameterNotification
 ```
 
 meeting_configuration_interface.h
 ```
 1. add callback event for webinar register notification
-ZOOM_SDK_NAMESPACE.IMeetingConfigurationEvent.onWebinarNeedRegisterNotification 
+ZOOM_SDK_NAMESPACE.IMeetingConfigurationEvent.onWebinarNeedRegisterNotification
 2.add callback event for end other meeting notification
-ZOOM_SDK_NAMESPACE.IMeetingConfigurationEvent.onEndOtherMeetingToJoinMeetingNotification 
+ZOOM_SDK_NAMESPACE.IMeetingConfigurationEvent.onEndOtherMeetingToJoinMeetingNotification
 3.add callback event for end other meeting notification
-ZOOM_SDK_NAMESPACE.IMeetingConfigurationEvent.onFreeMeetingEndingReminderNotification 
+ZOOM_SDK_NAMESPACE.IMeetingConfigurationEvent.onFreeMeetingEndingReminderNotification
 4. add new interfaces of meeting configuration
-ZOOM_SDK_NAMESPACE.IMeetingConfiguration.EnableInputMeetingScreenNameDlg 
-ZOOM_SDK_NAMESPACE.IMeetingConfiguration.RedirectWebinarNeedRegister 
+ZOOM_SDK_NAMESPACE.IMeetingConfiguration.EnableInputMeetingScreenNameDlg
+ZOOM_SDK_NAMESPACE.IMeetingConfiguration.RedirectWebinarNeedRegister
 ZOOM_SDK_NAMESPACE.IMeetingConfiguration.RedirectEndOtherMeeting
-ZOOM_SDK_NAMESPACE.IMeetingConfiguration.EnableShareIOSDevice 
+ZOOM_SDK_NAMESPACE.IMeetingConfiguration.EnableShareIOSDevice
 ZOOM_SDK_NAMESPACE.IMeetingConfiguration.EnableShareWhiteBoard
 ZOOM_SDK_NAMESPACE.IMeetingConfiguration.AlwaysShowIconOnTaskBar
 ZOOM_SDK_NAMESPACE.IMeetingConfiguration.RedirectFreeMeetingEndingReminderDlg
@@ -130,7 +150,7 @@ ZOOM_SDK_NAMESPACE.IMeetingConfiguration.SetShowVideoOptimizeChkbox
 ZOOM_SDK_NAMESPACE.IMeetingConfiguration.SetShowCallInTab
 ZOOM_SDK_NAMESPACE.IMeetingConfiguration.SetShowCallMeTab
 ZOOM_SDK_NAMESPACE.IMeetingConfiguration.ForceDisableMultiShare
-ZOOM_SDK_NAMESPACE.IMeetingConfiguration.SetAlwaysShowMeetingIDOnTitle 
+ZOOM_SDK_NAMESPACE.IMeetingConfiguration.SetAlwaysShowMeetingIDOnTitle
 ```
 
 meeting_live_stream_interface.h
@@ -148,52 +168,52 @@ ZOOM_SDK_NAMESPACE.IMeetingParticipantsController.CanbeCohost
 ZOOM_SDK_NAMESPACE.IMeetingParticipantsController.AssignCoHost
 ZOOM_SDK_NAMESPACE.IMeetingParticipantsController.RevokeCoHost
 ZOOM_SDK_NAMESPACE.IMeetingParticipantsController.ExpelUser
-ZOOM_SDK_NAMESPACE.IMeetingParticipantsController.CanReclaimHost 
-ZOOM_SDK_NAMESPACE.IMeetingParticipantsController.ReclaimHost 
-ZOOM_SDK_NAMESPACE.IMeetingParticipantsController.ReclaimHostByHostKey 
+ZOOM_SDK_NAMESPACE.IMeetingParticipantsController.CanReclaimHost
+ZOOM_SDK_NAMESPACE.IMeetingParticipantsController.ReclaimHost
+ZOOM_SDK_NAMESPACE.IMeetingParticipantsController.ReclaimHostByHostKey
 2.add callback event for cohost change notification
-ZOOM_SDK_NAMESPACE.IMeetingParticipantsCtrlEvent.onCoHostChangeNotification 
+ZOOM_SDK_NAMESPACE.IMeetingParticipantsCtrlEvent.onCoHostChangeNotification
 ```
 
 meeting_recording_interface.h
 ```
 1. add new interfaces of meeting recording control
-ZOOM_SDK_NAMESPACE.IMeetingRecordingController.CanStartRecording 
+ZOOM_SDK_NAMESPACE.IMeetingRecordingController.CanStartRecording
 ZOOM_SDK_NAMESPACE.IMeetingRecordingController.CanAllowDisAllowLocalRecording
-ZOOM_SDK_NAMESPACE.IMeetingRecordingController.StartCloudRecording 
+ZOOM_SDK_NAMESPACE.IMeetingRecordingController.StartCloudRecording
 ZOOM_SDK_NAMESPACE.IMeetingRecordingController.StopCloudRecording
 ZOOM_SDK_NAMESPACE.IMeetingRecordingController.IsSupportLocalRecording
 ZOOM_SDK_NAMESPACE.IMeetingRecordingController.AllowLocalRecording
-ZOOM_SDK_NAMESPACE.IMeetingRecordingController.DisAllowLocalRecording 
+ZOOM_SDK_NAMESPACE.IMeetingRecordingController.DisAllowLocalRecording
 2.add callback event for cloud recording status notification
-ZOOM_SDK_NAMESPACE.IMeetingRecordingCtrlEvent.onCloudRecordingStatus 
+ZOOM_SDK_NAMESPACE.IMeetingRecordingCtrlEvent.onCloudRecordingStatus
 ```
 
 meeting_remote_ctrl_interface.h
 ```
 add new interfaces of meeting recording control
-ZOOM_SDK_NAMESPACE.IMeetingRemoteController.CanRequestControl 
+ZOOM_SDK_NAMESPACE.IMeetingRemoteController.CanRequestControl
 ZOOM_SDK_NAMESPACE.IMeetingRemoteController.IsHaveRemoteControlRight
 ZOOM_SDK_NAMESPACE.IMeetingRemoteController.IsInRemoteControllingStatus
 ZOOM_SDK_NAMESPACE.IMeetingRemoteController.EnterRemoteControllingStatus
-ZOOM_SDK_NAMESPACE.IMeetingRemoteController.LeaveRemoteControllingStatus 
+ZOOM_SDK_NAMESPACE.IMeetingRemoteController.LeaveRemoteControllingStatus
 ```
 
 meeting_sharing_interface.h
 ```
 add new interfaces of meeting share control
-ZOOM_SDK_NAMESPACE.IMeetingShareController.StartWhiteBoardShare 
+ZOOM_SDK_NAMESPACE.IMeetingShareController.StartWhiteBoardShare
 ```
 
 meeting_video_interface.h
 ```
 1.add new interfaces of meeting video control
 ZOOM_SDK_NAMESPACE.IMeetingVideoController.CanAskAttendeeToStartVideo
-ZOOM_SDK_NAMESPACE.IMeetingVideoController.AskAttendeeToStartVideo 
+ZOOM_SDK_NAMESPACE.IMeetingVideoController.AskAttendeeToStartVideo
 ZOOM_SDK_NAMESPACE.IMeetingVideoController.CanStopAttendeeVideo
-ZOOM_SDK_NAMESPACE.IMeetingVideoController.StopAttendeeVideo 
+ZOOM_SDK_NAMESPACE.IMeetingVideoController.StopAttendeeVideo
 2.add callback event for host request to start video notification
-ZOOM_SDK_NAMESPACE.IMeetingVideoCtrlEvent.onHostRequestStartVideo 
+ZOOM_SDK_NAMESPACE.IMeetingVideoCtrlEvent.onHostRequestStartVideo
 ```
 
 
@@ -469,7 +489,7 @@ for details, please visit: https://developer.zoom.us/docs/windows/windows-sdk-re
 
 3. Support invite by Phone andCall Medirectly
 
-4. Add watermark - Powered by Zoom 
+4. Add watermark - Powered by Zoom
 
 5. Support to start/join meeting without audio
 
@@ -479,7 +499,7 @@ for details, please visit: https://developer.zoom.us/docs/windows/windows-sdk-re
 
 8. New interface in ISettingService
 
-9. New interface in IMeetingConfiguration 
+9. New interface in IMeetingConfiguration
 
 10. Refine IMeetingService interface
 
