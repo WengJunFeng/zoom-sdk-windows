@@ -15,7 +15,7 @@ Zoom SDK makes it easy to integrate Zoom with your Windows applications, and boo
 ## Getting Started
 
 The following instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-* For detailed instructions, please refer to our documentation website: [https://marketplace.zoom.us/docs/sdk/windows](https://marketplace.zoom.us/docs/sdk/windows);
+* For detailed instructions, please refer to our documentation website: [https://marketplace.zoom.us/docs/sdk/native-sdks/windows](https://marketplace.zoom.us/docs/sdk/native-sdks/windows);
 * If you need support or assistance, please visit our [Zoom Developer Community Forum](https://devforum.zoom.us/);
 
 ### Prerequisites
@@ -52,7 +52,7 @@ The Zoom SDK runs as a `DLL` in the context of the calling application process.
 
 ## Documentation
 
-Please visit [[https://marketplace.zoom.us/docs/sdk/windows](https://marketplace.zoom.us/docs/sdk/windows)] for details of each features and functions.
+Please visit [[https://marketplace.zoom.us/docs/sdk/native-sdks/windows](https://marketplace.zoom.us/docs/sdk/native-sdks/windows)] for details of each features and functions.
 
 ## Versioning
 
