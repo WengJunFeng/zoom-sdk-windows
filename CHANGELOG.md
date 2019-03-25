@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 2019-03-25 @ [v4.3.47204.0325](https://github.com/zoom/zoom-sdk-windows/releases/tag/v4.3.47204.0325)
+## 2019-03-25 @ [v4.3.1.47204.0325](https://github.com/zoom/zoom-sdk-windows/releases/tag/v4.3.1.47204.0325)
 
 **Note: Please do not assign new digital signature on cpthost.exe file. Assigning new digital signature on this file could lead to fatal errors**
 
@@ -30,7 +30,7 @@
 * IMeetingConfigurationFreeMeetingEvent.onFreeMeetingEndingReminderNotification
 * SetUICustomizedString
 
-## 2019-01-23 @ [v4.3.30730.0118](https://github.com/zoom/zoom-sdk-windows/releases/tag/v4.3.30730.0118)
+## 2019-01-23 @ [v4.3.0.30730.0118](https://github.com/zoom/zoom-sdk-windows/releases/tag/v4.3.0.30730.0118)
 
 **Added**
 *	Support for closed caption
